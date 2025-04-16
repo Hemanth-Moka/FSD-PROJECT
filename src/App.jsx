@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Concerts from "./mainpages/Concerts";
+import Events from "./mainpages/Events";
+import Movies from "./mainpages/Movies";
+import UserLogin from "./authentication/UserLogin";
+import Register from "./authentication/Register";
+import Contact from "./mainpages/Contact";
+import Home from "./mainpages/Home";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <Navbar />
+     
+      <div className="pt-4 px-4"> {/* Optional padding below navbar */}
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Optional Home route */}
+          <Route path="/concerts" element={<Concerts />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<UserLogin />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+
+
+  );
 }
 
-export default App
+export default App;

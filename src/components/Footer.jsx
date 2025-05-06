@@ -44,7 +44,9 @@ const Footer = () => {
           <a href="#"><FaTwitter /></a>
           <a href="#"><FaYoutube /></a>
         </div>
-        <p>© 2025 Travel Booking Inc. All rights reserved.</p>
+        </div>
+        <div className="footer-bottom-text">
+          <p>Follow us on social media for the latest updates!</p>
       </div>
     </footer>
   );

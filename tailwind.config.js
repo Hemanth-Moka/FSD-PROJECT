@@ -8,5 +8,14 @@ export default {
     extend: {},
   },
   plugins: [],
+  theme: {
+  extend: {
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+      cinzel: ['Cinzel', 'serif'],
+    },
+  },
+}
+  
 }
 
